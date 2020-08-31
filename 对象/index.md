@@ -5,7 +5,7 @@
 - 对象创建形式
 
   - 字面量创建/构造形式创建
-  - 区别：字面量声明可以添加多个键值对，而构造形式必须手动逐个添加属性。
+  - 区别：字面量声明可以添加多个l键值对，而构造形式必须手动逐个添加属性。
 
 - 类型
   - 简单类型：string,number,boolean,null,undefined
@@ -49,5 +49,20 @@ myObj['foobaz'] // world
 
 ```
 
-## 属性和方法
-+ 
+## 不变性
++ 结合writeable:false,configurable:false可以创建一个真正的常量属性(不可修改，删除，重定义)
++ 禁止扩展：使用Object.preventExtensions(..)
+```
+Object.preventExtensions(obj)
+obj.b=4 
+console.log(obj.b) //undefined
+```
++ 密封:Object.seal(..)创建一个密封对象，这个方法实际上会在一个现有对象上调用Object.preventExtensions(..)并把所有现有属性标记为configurable:false
++ 冻结:Object.freeze(..):创建一个冻结对象，调用Object.seal(..),并把所有"数据访问"属性标记为writeable:false,即无法配置也不可写.
+```
+var objec = {a:2}
+Object.freeze(objec)
+objec.a =3
+console.log(objec.a) //2
+```
+
