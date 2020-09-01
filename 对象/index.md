@@ -66,3 +66,44 @@ objec.a =3
 console.log(objec.a) //2
 ```
 
+## 存在性
+```
+var uObj = {
+  a:2
+}
+
+console.log("a" in uObj) // true
+console.log("b" in uObj) // false
+console.log(uObj.hasOwnProperty('a'))// true
+console.log(uObj.hasOwnProperty('b'))// false
+```
+
++ in 操作符会检出属性是否在对象及其Prototype原型链中
++ hasOwnProperty(..)只会检查属性是否在uObj对象中，不会检查原型链。
++ in操作符检查的是属性名
+
+### 枚举
++ 相当于可以出现在对象属性的遍历中
++ Object.keys(..)和Object.getOwnPropertyNames(..)都只会查找对象直接包含的属性.
+
+## 遍历
++ ES5增加了一些数组的辅助迭代器，包括forEach(..),every(..)和some(..),
++ forEach会遍历数组中的所有值并忽略回调函数的返回值。
++ every会一直运行直到回到函数返回false
++ some会一直运行到回调函数返回true
++ every和some中特殊的返回值和普通for循环中的break语句类似，会提前终止遍历
++ 使用for...in遍历对象是无法直接获取属性值的，实际上遍历的是对象中所有可枚举属性，需要手动获取属性值。
+
+```
+for (item in [1,2,3]){
+  console.log(item) // 0 1 2
+}
+for (key of [1,2,3]){
+  console.log(key) // 1 2 3 
+}
+```
++ ES6的for...of循环语法，直接遍历值而不是下标
++ for..of 循环首先会向北访问对象请求一个迭代器对象，然后通过调用迭代器对象的next()方法来遍历所有返回值
++ 数组有内置的@@iterator ，因此for..of可以直接应用在数组上
+ 
+

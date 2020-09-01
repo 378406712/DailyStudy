@@ -45,3 +45,22 @@ var objec = {a:2}
 Object.freeze(objec)
 objec.a =3
 console.log(objec.a) //2
+
+var uObj = {
+  a:2
+}
+
+console.log("a" in uObj) // true
+console.log("b" in uObj) // false
+
+console.log(uObj.hasOwnProperty('a'))// true
+console.log(uObj.hasOwnProperty('b'))// false
+
+console.log(4 in [2,4,5])// false
+
+for (item in [1,2,3]){
+  console.log(item) // 0 1 2
+}
+for (key of [1,2,3]){
+  console.log(key) // 1 2 3 
+}
