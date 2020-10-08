@@ -7,36 +7,71 @@
   </head>
   <body>
     <script>
-        //   var a = new String('abc')
-        //   console.log(typeof a)
-        //   console.log(a.valueOf())
-        //   console.log(a instanceof String)
-        //   console.log(Object.prototype.toString.call(a))
-        //   console.log(Object.prototype.toString.call(null))
-        //   console.log(Object.prototype.toString.call(undefined))
-        //   var a = new Array(1)
-        //   a.push(3)
-        //   console.log(a.length)
+      //   var a = new String('abc')
+      //   console.log(typeof a)
+      //   console.log(a.valueOf())
+      //   console.log(a instanceof String)
+      //   console.log(Object.prototype.toString.call(a))
+      //   console.log(Object.prototype.toString.call(null))
+      //   console.log(Object.prototype.toString.call(undefined))
+      //   var a = new Array(1)
+      //   a.push(3)
+      //   console.log(a.length)
 
-        //   var a = new Array(3)
-        //   var b = [undefined, undefined, undefined]
-        //   var c = []
-        //   c.length = 3
-        //   console.log(a)
-        //   console.log(b)
-        //   console.log(c)
-        //   console.log(a.map((v, i) => i))
-        //   console.log(b.map((v, i) => i))
-        //   Date.now = function () {
-        //     return new Date().getTime()
-        //   }
+      //   var a = new Array(3)
+      //   var b = [undefined, undefined, undefined]
+      //   var c = []
+      //   c.length = 3
+      //   console.log(a)
+      //   console.log(b)
+      //   console.log(c)
+      //   console.log(a.map((v, i) => i))
+      //   console.log(b.map((v, i) => i))
+      //   Date.now = function () {
+      //     return new Date().getTime()
+      //   }
 
-        //   console.log(Date.now())
+      //   console.log(Date.now())
       //   var mysym = Symbol('my symbol')
       //   console.log(mysym)
       //   console.log(mysym.toString())
       //   console.log(typeof mysym)
-      var a = new String('XYZ')
+      // var a = new String('XYZ')
+      // var a = {
+      //   b: 1,
+      //   c: '2',
+      //   d: [1, 2]
+      // }
+      // console.log(JSON.stringify(a, ['b', 'c']))
+      // console.log(
+      //   JSON.stringify(
+      //     a,
+      //     (k, v) => {
+      //       if (k !== 'c') return v
+      //     },
+      //     '------'
+      //   )
+      // )
+      // console.log('packet' ? true : false)
+      // console.log('packet')
+      // console.log('packet' == true)
+      // var a = new Boolean(false)
+      // var b = new Number(0)
+      // var c = new String('')
+      // var d = a && b && c
+      // console.log(d)
+      // console.log(document.all)
+      // var a = '3'
+      // var d = +a
+      // console.log(d)
+      // var time = Date.now()
+      // console.log(time)
+
+      var a = 'Hello World'
+      console.log(~a.indexOf('Wo'))
+      if (~a.indexOf('Wo')) {
+        console.log('找到了')
+      }
     </script>
   </body>
 </html>
