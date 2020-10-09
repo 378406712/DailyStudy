@@ -22,11 +22,11 @@
 // console.log(JSON.stringify([1, undefined, function () {}]))
 // console.log(JSON.stringify({ a: 2, b: function () {} }))
 
-var o = {}
-var a = {
-  b: 2,
-  c: o,
-  d: function () {}
-}
-o.e = a
-console.log(JSON.stringify(a))
+// var o = {}
+// var a = {
+//   b: 2,
+//   c: o,
+//   d: function () {}
+// }
+// o.e = a
+// console.log(JSON.stringify(a))

@@ -67,11 +67,32 @@
       // var time = Date.now()
       // console.log(time)
 
-      var a = 'Hello World'
-      console.log(~a.indexOf('Wo'))
-      if (~a.indexOf('Wo')) {
-        console.log('找到了')
+      // var a = 'Hello World'
+      // console.log(~a.indexOf('Wo'))
+      // if (~a.indexOf('Wo')) {
+      //   console.log('找到了')
+      // }
+      // console.log(~~0.14)
+      // var a = '42.2'
+      // var b = '42.2px'
+      // console.log(Number(a))
+      // console.log(parseFloat(a))
+      // console.log(Number(b))
+      // console.log(parseFloat(b))
+      // console.log(parseInt(Infinity, 19))
+      // console.log(parseInt(new String('42')))
+      // console.log(parseInt(0.0000007))
+      // console.log(parseInt("103",2))
+      var a = {
+        valueOf() {
+          return 42
+        },
+        toString() {
+          return 4
+        }
       }
+      console.log(a + '')
+      console.log(String(a))
     </script>
   </body>
 </html>
