@@ -107,3 +107,58 @@
 // }
 // run(bar);
 
+// thunk:用于调用另外一个函数的函数，无任何参数
+// function foo(x, y) {
+//   return x + y;
+// }
+// function fooThunk() {
+//   return foo(3, 4);
+// }
+// console.log(fooThunk());
+
+function foo(x, y, cb) {
+  setTimeout(() => {
+    cb(x + y);
+  }, 1000);
+}
+// function fooThunk(cb){
+//     foo(3,4,cb)
+// }
+// fooThunk((sum)=>console.log(sum))
+
+// function thunkify(fn) {
+//   var args = [].slice.call(arguments, 1);
+//   console.log(args)//[3,4]
+//   return function (cb) {
+//     args.push(cb);
+//     return fn.apply(null, args);
+//   };
+// }2
+// var fooThunk = thunkify(foo,3,4)
+// fooThunk((sum)=>console.log(sum))
+
+// function* foo(url) {
+//   try {
+//     console.log("requesting", url);
+//     var val = yield request(url);
+//     console.log(val);
+//   } catch (error) {
+//     console.log("Oops", err);
+//     return false;
+//   }
+// }
+// var it = foo("https://xxx.com");
+
+function *foo() {
+  try {
+    console.log("requesting", url);
+    var TMP1 = request(url);
+    var val = yield TMP1;
+    console.log(val);
+  } catch (err) {
+    console.log("Oops", err);
+    return false;
+  }
+}
+foo().next()
+foo().next()
